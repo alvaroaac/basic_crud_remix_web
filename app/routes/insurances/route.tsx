@@ -23,7 +23,7 @@ export default function Insurances() {
   return (
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center">Insurances</h1>
-      <Link to="/insurances/new" className="mb-6 inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
+      <Link to="/new_insurance" className="mb-6 inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
         Create New Insurance
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

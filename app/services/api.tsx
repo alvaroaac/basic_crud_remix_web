@@ -26,6 +26,14 @@ interface PathParams {
     insurances: string
 }
 
+interface CreateInsuranceBody {
+    policyNumber: string,
+    policyHolderName: string,
+    startDate: string,
+    premiumAmount: number,
+    status: string
+}
+
 const path: PathParams = {
     auth: 'api/auth',
     insurances: 'api/insurances'
@@ -57,6 +65,18 @@ export const api = {
     insurances: {
         list: async () => {
             return axiosInstance.get(`${path.insurances}`)
+        },
+        find: async (id: number) => {
+            return axiosInstance.get(`${path.insurances}/${id}`)
+        },
+        create: async (body: CreateInsuranceBody) => {
+            return axiosInstance.post(`${path.insurances}`, body)
+        },
+        update: async (id: number, body: CreateInsuranceBody) => {
+            return axiosInstance.post(`${path.insurances}/${id}`, body)
+        },
+        delete: async(id: number) => {
+            return axiosInstance.delete(`${path.insurances}/${id}`)
         }
     }
 } 
